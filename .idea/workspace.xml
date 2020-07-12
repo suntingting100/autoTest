@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c2c9913-02c9-48ad-b050-a7e1846fcc13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +31,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/juren-master的副本2" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
@@ -173,12 +175,24 @@
       <workItem from="1593919265399" duration="1631000" />
       <workItem from="1593921171502" duration="7141000" />
       <workItem from="1594521650741" duration="6015000" />
-      <workItem from="1594547902108" duration="10074000" />
+      <workItem from="1594547902108" duration="11471000" />
     </task>
+    <task id="LOCAL-00001" summary="123">
+      <created>1594558438699</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594558438700</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="123" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="357" key="#Inspections" timestamp="1593182839603">
@@ -197,10 +211,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1592648455563" />
-    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1594558378228">
+    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1594558436984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594558378228" />
+    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594558436984" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1594558416906">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594558416906" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1593230785066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,6 +259,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="11" y="246" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594556664449" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1594558448280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594558448279" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1594547904310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
