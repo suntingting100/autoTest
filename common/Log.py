@@ -14,4 +14,6 @@ class Logger(object):
         self.logger = logging.getLogger(logger_name)
         logging.root.setLevel(logging.NOTSET)
         self.log_file_name = "Logs"  # 日志文件的名称
+
+        ###111
         
