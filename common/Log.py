@@ -11,7 +11,7 @@ log_path = os.path.join(path, "result") # 存放log文件的
 
 class Logger(object):
     def __init__(self, logger_name="log..."):
-        self.logger = logging.getLogger(logger_name)
+        self.logger = logging.getLogger(logger_name)git
         logging.root.setLevel(logging.NOTSET)
         self.log_file_name = "Logs"  # 日志文件的名称
         self.backup_count = 5 # 最多存放日志的数量
