@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     m = SendEmail(
         username="617587058@qq.com",
-        passwd="uducdiqteliwbbfb",  # 授权码
+        passwd="vmmmipmktibibcgj",  # 授权码
         recv=["617587058@qq.com"],
         title="测试",
         content="测试发送邮件",
