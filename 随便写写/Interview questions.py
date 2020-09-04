@@ -78,4 +78,37 @@
 # b = list(set(a))
 # print(b)
 
-# 计算n的阶乘
+# 计算n的阶乘 例如：计算3的，3*2*1
+# def digui(n):
+#     if n == 1:
+#         return 1
+#     else:
+#         return n * (digui(n-1))
+#
+# a = 10
+# print(digui(a))
+
+
+# 斐波那契数列  1、1、2、3、5、8、13
+# a = 0
+# b = 1
+# while b < 100:
+#     print(b, end=",")
+#     a, b = b, a+b
+# print(b)
+
+# 幂的递归 x的n次方
+# def mi(x, n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return x * mi(x, n-1)
+#
+# x = 3
+# num = 4
+# print(mi(x, num))
+
+#
+
+
+
