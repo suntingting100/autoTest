@@ -188,24 +188,56 @@ while 循环使用 else 语句
 """
 for 语句
 """
-languages = ["C", "C++", "Perl", "Python"]
-for x in languages:
-    print(x)
+# languages = ["C", "C++", "Perl", "Python"]
+# for x in languages:
+#     print(x)
 
 """
  for 实例中使用了 break 语句，break 语句用于跳出当前循环体：
 """
+# sites = ["Baidu", "Google","Runoob","Taobao"]
+# for site in sites:
+#     if site == "Runoob":
+#         print("菜鸟教程")
+#         break
+#     print("循环数据 " + site)
+#
+# else:
+#     print("完成循环")
 
-sites = ["Baidu", "Google","Runoob","Taobao"]
-for site in sites:
-    if site == "Runoob":
-        print("菜鸟教程")
+"""
+range()函数
+"""
+# for i in range(5):
+#     print(i, end="、")
+#
+# for i in range(5, 9):
+#     print(i)
+#
+# for i in range(0, 10, 3):
+#     print(i)
+#
+# for i in range(-10, -100, -30):
+#     print(i)
+#
+# a = ['Google', 'Baidu', 'Runoob', 'Taobao', 'QQ']
+# for i in range(len(a)):
+#     print(i, a[i])
+#
+# print(list(range(5)))
+
+
+"""
+break 语句可以跳出 for 和 while 的循环体。如果你从 for 或 while 循环中终止，任何对应的循环 else 块将不执行。
+continue 语句被用来告诉 Python 跳过当前循环块中的剩余语句，然后继续进行下一轮循环。
+"""
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
         break
-    print("循环数据 " + site)
-
-else:
-    print("完成循环")
-
+    print(n)
+print("循环结束。")
 
 
 
