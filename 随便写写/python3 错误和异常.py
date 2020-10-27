@@ -9,6 +9,9 @@ AssertionError
 NameError
 """
 
+import builtins
+print(dir(builtins))
+
 """
 异常处理：异常捕捉可以使用 try/except 语句。
 """
