@@ -8,7 +8,7 @@ from testfile.readConfig import ReadConfig
 from common.configEmail import SendEmail
 from apscheduler.schedulers.blocking import BlockingScheduler
 # import pythoncom
-from common.Log import Logger
+from common.Log import Log
 
 
 send_mail = SendEmail(
@@ -25,7 +25,7 @@ report_path = os.path.join(path, 'result')
 on_off = ReadConfig().get_email('on_off')
 
 
-log = Logger().get_logger()
+log = Log
 
 
 class AllTest:  # 定义一个类AllTest
@@ -35,9 +35,8 @@ class AllTest:  # 定义一个类AllTest
         self.caseListFile = os.path.join(path, "testfile", "caselist.txt")  # 配置执行哪些测试文件的配置文件路径
         self.caseFile = os.path.join(path, "testCase")  # 真正的测试断言文件路径
         self.caseList = []
-        log.info("resultPath", resultPath)
-        log.info("caseListFile", self.caseListFile)
-        log.info("caseList", self.caseList)
+
+
 
     def set_case_list(self):
         """
