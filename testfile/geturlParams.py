@@ -1,6 +1,6 @@
 # 获取接口的URL、参数、method等
 
-import readConfig as readConfig
+from testfile import readConfig
 
 readconfig = readConfig.ReadConfig()
 print(readconfig)
@@ -9,7 +9,7 @@ print(readconfig)
 class geturlParams():
 
     def get_url(self):
-        new_url = readconfig.get_http("scheme") + "://" + readconfig.get_http("baseurl") + ":8888" + "/login" + "?"
+        new_url = readconfig.get_http("scheme") + "://" + readconfig.get_http("baseurl") + "/login" + "?"
         return new_url
 
 

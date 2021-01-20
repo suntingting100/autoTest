@@ -3,18 +3,18 @@
 import json
 import unittest
 from common.configHttp import RunMain
-import paramuinttest
-import geturlParams
+import paramunittest
+from testfile.geturlParams import geturlParams
 import urllib.parse
 # import pythoncom
-import readExcel
+from testfile.readExcel import readExcel
 # pythoncom.CoInitialize
 
-url = geturlParams().get_Url()
-login_xls = readExcel.get_xls("userCase.xlsx", "login")
+url = geturlParams().get_url()
+login_xls = readExcel().get_xls("userCase.xlsx", "login")
 
 
-@paramuinttest.parametrized(*login_xls)
+@paramunittest.parametrized(*login_xls)
 class testUserLogin(unittest.TestCase):
     def setParameters(self, case_name, path, query, method):
         """
@@ -27,7 +27,7 @@ class testUserLogin(unittest.TestCase):
         """
         self.case_name = str(case_name)
         self.path = str(path)
-        self.query = str(query)
+        self.query = query
         self.method = str(method)
 
     def description(self):
@@ -55,14 +55,13 @@ class testUserLogin(unittest.TestCase):
         check test result
         :return:
         """
-        url1 = "http://www.xxx.com/login?"
-        new_url = url1 + self.query
-        data1 = dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(new_url).query))
-        info = RunMain().run_main(self.method, url, data1)
+        host = "https://tapi.quanziapp.com"
+        url1 = host + self.path
+        info = RunMain().run_main(self.method, url1, self.query)
+        print(info)
         ss = json.loads(info)
+        print(ss)
         if self.case_name == "login":
-            self.assertEquals(ss["code"], 200)
+            self.assertEquals(ss["id"], "j7X7rk")
         if self.case_name == "login_error":
-            self.assertEquals(ss["code"], -1)
-        if self.case_name == "login_url":
-            self.assertEquals(ss["code"], 10001)
+            self.assertEquals(ss["code"], "wrong_password")

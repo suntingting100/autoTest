@@ -28,4 +28,4 @@ class ReadConfig:
 if __name__ == "__main__":
     print("HTTP中的baseurl值为：", ReadConfig().get_http("baseurl"))
     print("EMAIL中的开关on_off值为： ", ReadConfig().get_email("on_off"))
-
+    print(ReadConfig().get_email("file"))

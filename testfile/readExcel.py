@@ -1,6 +1,6 @@
-# 读取Excel的方法
+# 读取Excel的方法  pip install pyexcel-xls
 import os
-import getpathInfo
+from testfile import getpathInfo
 from xlrd import open_workbook
 
 path = getpathInfo.get_Path()
