@@ -1,67 +1,38 @@
-# 读取userCase.xlsx中的用例，使用pytest来进行断言校验
-
-import json
 import unittest
-from common.configHttp import RunMain
-import paramunittest
-from testfile.geturlParams import geturlParams
-import urllib.parse
-# import pythoncom
-from testfile.readExcel import readExcel
-# pythoncom.CoInitialize
+import ddt
+import common.commons as common
+from base.configHttp import Base
 
-url = geturlParams().get_url()
-login_xls = readExcel().get_xls("userCase.xlsx", "login")
+r = common.Common().ReadExcelTypeDict('cezxhi .xlsx')  # 拿到具体的Excel表数据
+@ddt.ddt  #导入ddt模块
+class TestLogin(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:  # setupclass类方法  全部用例开始前执行一次
+        cls.logs = common.Common().get_logs() # 导入日志方法
+        cls.logs.debug('开始写入接口自动化测试用例')
+    @classmethod
+    def tearDownClass(cls) -> None:
+        cls.logs.debug('自动化接口用例结束')
+
+    def setUp(self) -> None:
+        self.logs.debug('开始本条接口用例')
+
+    def tearDown(self) -> None:
+        self.logs.debug('结束本条用例')
+
+    @ddt.data(*r) #  引入ddt模块，读取拿到的数据
+    def test_logins(self,pars):  # 用例方法名开头必须已test  pars参数为接收的表数据值
+        import json  #导入json模块
+        dic = json.loads(pars['body参数值'])  # 将Excel数据中的参数值转变为json格式
+        url = pars['接口地址']  # 拿到请求url
+        yuqi = pars['预期结果']  # 拿到预期结果
+        fs = pars['请求方式'] # 拿到请求方式
+        result = Base().requests_type(method = fs,url = url,data = dic)  # 填充base页的请求api
+        self.assertEqual(result.text, yuqi)  # 进行断言 看用例是否通过
 
 
-@paramunittest.parametrized(*login_xls)
-class testUserLogin(unittest.TestCase):
-    def setParameters(self, case_name, path, query, method):
-        """
-        set params
-        :param case_name:
-        :param path:
-        :param query:
-        :param method:
-        :return:
-        """
-        self.case_name = str(case_name)
-        self.path = str(path)
-        self.query = query
-        self.method = str(method)
+if __name__ == '__main__':
+    load = unittest.TestLoader().loadTestsFromTestCase(TestLogin)  #使用loader加载方式 来找寻所有已test开头的用例
+    suite = unittest.TestSuite([load,])
 
-    def description(self):
-        """
-        test report description
-        :return:
-        """
-        self.case_name
-
-    def setUp(self):
-        """
-
-        :return:
-        """
-        print(self.case_name + "测试开始前准备")
-
-    def test01case(self):
-        self.checkResult()
-
-    def tearDown(self):
-        print("测试结束，输出log完结\n\n")
-
-    def checkResult(self):
-        """
-        check test result
-        :return:
-        """
-        host = "https://tapi.quanziapp.com"
-        url1 = host + self.path
-        info = RunMain().run_main(self.method, url1, self.query)
-        print(info)
-        ss = json.loads(info)
-        print(ss)
-        if self.case_name == "login":
-            self.assertEquals(ss["id"], "j7X7rk")
-        if self.case_name == "login_error":
-            self.assertEquals(ss["code"], "wrong_password")
+    common.Common().GetHtmlResult(suite,'登录测试用例')

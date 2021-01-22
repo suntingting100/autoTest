@@ -151,7 +151,7 @@ if __name__ == "__main__":
         recv=["suntingting_100@126.com"],
         title="测试",
         content="测试发送邮件",
-        file=r"E:\python_project\python_unittest\picture\smtp2.jpg",
+        file=r"/picture/smtp2.jpg",
         ssl=True,
     )
 
