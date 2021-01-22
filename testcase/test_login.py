@@ -3,7 +3,11 @@ import ddt
 import common.commons as common
 from base.configHttp import Base
 
-r = common.Common().ReadExcelTypeDict('cezxhi .xlsx')  # 拿到具体的Excel表数据
+
+r = common.Common().ReadExcelTypeDict('userCase.xlsx')  # 拿到具体的Excel表数据
+print(r)
+
+
 @ddt.ddt  #导入ddt模块
 class TestLogin(unittest.TestCase):
     @classmethod
@@ -28,11 +32,11 @@ class TestLogin(unittest.TestCase):
         yuqi = pars['预期结果']  # 拿到预期结果
         fs = pars['请求方式'] # 拿到请求方式
         result = Base().requests_type(method = fs,url = url,data = dic)  # 填充base页的请求api
-        self.assertEqual(result.text, yuqi)  # 进行断言 看用例是否通过
+        self.assertEqual(result.text,yuqi)  # 进行断言 看用例是否通过
 
 
 if __name__ == '__main__':
     load = unittest.TestLoader().loadTestsFromTestCase(TestLogin)  #使用loader加载方式 来找寻所有已test开头的用例
     suite = unittest.TestSuite([load,])
 
-    common.Common().GetHtmlResult(suite,'登录测试用例')
+    common.Common().GetHtmlResult(suite, '登录测试用例')

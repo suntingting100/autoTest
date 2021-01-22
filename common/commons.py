@@ -4,7 +4,7 @@ from testfile import getpathInfo
 
 log_path = os.path.join(getpathInfo.get_root_path(), "result", "logs")
 report_html = os.path.join(getpathInfo.get_root_path(), "result", "html")
-read_xlrd = os.path.join(getpathInfo.get_root_path(), "testfile", "../testfile/case", "userCase")
+read_xlrd = os.path.join(getpathInfo.get_root_path(), "testfile", "case", "userCase.xlsx")
 
 class Common():
     #封装日志方法

@@ -41,6 +41,10 @@ class Base():
             result = self.send_delete(url=url, params=params, data=data, headers=headers, files=files)
         return result
 
+    def Get_Login_token(self, data):
+        res = self.send_post(url="请求网址", data=data)
+        return {"token": res['result']['token']}
+
 
 if __name__ == "__main__":
     result = Base().requests_type(method="post", url="https://tapi.quanziapp.com/api/v2/login",
